@@ -1,0 +1,25 @@
+<html>
+    {% load mytags %}
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <title>
+         {% block title_block%}
+         {% endblock %}
+    </title>
+    </head>
+    <body>
+        <div class="content" style="width:70%;float:left;height:150%;color:#b60909fa;background-color:#c8d47f;padding:0 0 0 30px"> 
+            {% block content_block %}
+            {% endblock %}
+        </div>
+        <div class="sidebar" style="width:30%;float:right;height:150%;color:#f59749;background-color:#ade2f5;padding:10px">
+            <h1>Nazish's blog</h1>
+            <h1><p>The Beauty of Seasons</p></h1>
+            <h3>Total publications</h3>
+            <span style="color: rgb(226, 43, 73);font-size: 20px">
+                {% total_posts %}</span>
+                <h3>Latest Posts</h3>
+                {% show_latest_posts 2 %}
+        </div>
+    </body>
+</html>
